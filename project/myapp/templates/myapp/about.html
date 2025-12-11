@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Myproject | About</title>
+</head>
+<body>
+    <p>
+        <a href="/">Home</a> | <a href="/contact/">Contact</a> | <a href="/about/">About</a> | <a href="/genbank/">Genbank</a>
+    </p>
+
+    <h1>About</h1>
+    {% if bool_item %}
+        {% if lucky_number != unlucky_number %}
+            <p>your lucky number is: <b><i>{{ lucky_number }}</i></b>!</p>
+            <p>your unlucky number is: <b><i>{{ unlucky_number }}</i></b>!</p>
+        {% else %}
+            <p>your number is {{ lucky_number }}</p>
+            <p style="color: #2A4494"><b>don't worry, be happy! :)</b></p>
+        {% endif %}
+    {% endif %}
+
+
+    <ul>
+        {% for tech in mytech %}
+                <li><a href="{{ tech.url }}"> {{ tech.name }} </a>: {{ tech.level}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
